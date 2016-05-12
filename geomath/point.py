@@ -1,6 +1,18 @@
 from math import sqrt, hypot
 
 
+def distance2(a, b):
+    '''
+    Usage:
+    >>> p1=Point(0,3)
+    >>> p2=Point(0,-3)
+    >>> Point.distance2(p1,p2)
+    '''
+    x = b.x - a.x
+    y = b.y - a.y
+    return(hypot(x, y))
+
+
 class Point:
     "Point Object in GeoMath library"
 
@@ -35,17 +47,6 @@ class Point:
         Yd = pow(PointTwo.y - self.y, 2)
 
         return(sqrt(Xd + Yd))
-
-    def distance2(self, other):
-        '''
-        Usage:
-        >>> p1=Point(0,3)
-        >>> p2=Point(0,-3)
-        >>> Point.distance2(p1,p2)
-        '''
-        x = other.x - self.x
-        y = other.y - self.y
-        return(hypot(x, y))
 
         # The quadrant of point  "self".
     def quadrant(self):
